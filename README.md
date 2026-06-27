@@ -1,4 +1,3 @@
-
 html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -457,7 +456,6 @@ html_content = '''<!DOCTYPE html>
 
 <main>
 
-  <!-- What It Does -->
   <section>
     <h2>What It Does</h2>
     <div class="io-grid">
@@ -486,7 +484,6 @@ html_content = '''<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Why This Is Impressive -->
   <section>
     <h2>Why This Stands Out</h2>
     <div class="card">
@@ -500,7 +497,6 @@ html_content = '''<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Core Features -->
   <section>
     <h2>Core Features</h2>
     <div class="feature-grid">
@@ -522,7 +518,6 @@ html_content = '''<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Architecture -->
   <section>
     <h2>System Architecture</h2>
     <div class="arch-flow">
@@ -538,7 +533,6 @@ html_content = '''<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Telemetry Comparison -->
   <section>
     <h2>Telemetry Replay & Driver Comparison</h2>
     <div class="telemetry-bar">
@@ -559,7 +553,6 @@ html_content = '''<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Strategy Decision -->
   <section>
     <h2>Strategy Optimization AI</h2>
     <div class="decision-box">
@@ -577,7 +570,6 @@ html_content = '''<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Physics Models Built From Scratch -->
   <section>
     <h2>Physics Models — Built From Scratch</h2>
     <div class="physics-list">
@@ -608,7 +600,6 @@ html_content = '''<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Tech Stack -->
   <section>
     <h2>Tech Stack</h2>
     <div class="tech-grid">
