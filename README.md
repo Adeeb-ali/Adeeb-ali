@@ -1,4 +1,4 @@
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -204,6 +204,12 @@ html_content = '''<!DOCTYPE html>
     padding: 28px;
     position: relative;
     overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .feature-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
   }
 
   .feature-card::after {
@@ -261,7 +267,10 @@ html_content = '''<!DOCTYPE html>
     font-size: 0.85rem;
     font-weight: 600;
     white-space: nowrap;
+    transition: border-color 0.2s;
   }
+
+  .arch-node:hover { border-color: var(--accent); }
 
   .arch-arrow {
     color: var(--accent);
@@ -286,6 +295,12 @@ html_content = '''<!DOCTYPE html>
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .physics-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
   }
 
   .physics-item .icon {
@@ -344,7 +359,10 @@ html_content = '''<!DOCTYPE html>
     color: var(--text-dim);
     text-align: center;
     border: 1px solid var(--border);
+    transition: border-color 0.2s;
   }
+
+  .trace:hover { border-color: var(--accent); color: var(--text); }
 
   /* ── Strategy Decision ── */
   .decision-box {
@@ -356,9 +374,38 @@ html_content = '''<!DOCTYPE html>
   }
 
   .decision-prompt {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-dim);
     margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .decision-prompt strong { color: var(--text); }
+
+  .lap-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .lap-stat {
+    text-align: center;
+  }
+
+  .lap-stat .val {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--yellow);
+  }
+
+  .lap-stat .lbl {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-top: 2px;
   }
 
   .decision-options {
@@ -366,6 +413,7 @@ html_content = '''<!DOCTYPE html>
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 20px;
   }
 
   .decision-btn {
@@ -375,7 +423,6 @@ html_content = '''<!DOCTYPE html>
     font-weight: 700;
     border: 2px solid;
     cursor: default;
-    transition: all 0.2s;
   }
 
   .btn-box {
@@ -391,10 +438,12 @@ html_content = '''<!DOCTYPE html>
   }
 
   .explanation {
-    margin-top: 20px;
     font-size: 0.9rem;
     color: var(--text-dim);
     font-style: italic;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.7;
   }
 
   /* ── Tech Stack ── */
@@ -412,7 +461,10 @@ html_content = '''<!DOCTYPE html>
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-dim);
+    transition: border-color 0.2s, color 0.2s;
   }
+
+  .tech-pill:hover { border-color: var(--accent); color: var(--text); }
 
   /* ── Footer ── */
   footer {
@@ -429,13 +481,18 @@ html_content = '''<!DOCTYPE html>
     font-weight: 600;
   }
 
+  footer a:hover { text-decoration: underline; }
+
   /* ── Animations ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  section { animation: fadeUp 0.6s ease-out both; }
+  section {
+    animation: fadeUp 0.6s ease-out both;
+  }
+
   section:nth-child(1) { animation-delay: 0.1s; }
   section:nth-child(2) { animation-delay: 0.2s; }
   section:nth-child(3) { animation-delay: 0.3s; }
@@ -443,7 +500,11 @@ html_content = '''<!DOCTYPE html>
   section:nth-child(5) { animation-delay: 0.5s; }
   section:nth-child(6) { animation-delay: 0.6s; }
   section:nth-child(7) { animation-delay: 0.7s; }
+  section:nth-child(8) { animation-delay: 0.8s; }
 
+  @media (prefers-reduced-motion: reduce) {
+    section { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -462,10 +523,10 @@ html_content = '''<!DOCTYPE html>
       <div class="io-box">
         <h4>Input Parameters</h4>
         <ul>
-          <li><span class="dot dot-in"></span>Track layout & elevation</li>
+          <li><span class="dot dot-in"></span>Track layout &amp; elevation</li>
           <li><span class="dot dot-in"></span>Weather conditions</li>
-          <li><span class="dot dot-in"></span>Tire compound & age</li>
-          <li><span class="dot dot-in"></span>Fuel load & burn rate</li>
+          <li><span class="dot dot-in"></span>Tire compound &amp; age</li>
+          <li><span class="dot dot-in"></span>Fuel load &amp; burn rate</li>
           <li><span class="dot dot-in"></span>Safety car probability</li>
           <li><span class="dot dot-in"></span>Driver telemetry profile</li>
         </ul>
@@ -534,14 +595,14 @@ html_content = '''<!DOCTYPE html>
   </section>
 
   <section>
-    <h2>Telemetry Replay & Driver Comparison</h2>
+    <h2>Telemetry Replay &amp; Driver Comparison</h2>
     <div class="telemetry-bar">
       <div class="driver-compare">
         <div class="driver driver-a">Max Verstappen</div>
         <div class="vs">VS</div>
         <div class="driver driver-b">Lewis Hamilton</div>
       </div>
-      <p style="text-align:center; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 8px;">Corner-by-corner trace analysis</p>
+      <p style="text-align:center; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 16px;">Corner-by-corner trace analysis</p>
       <div class="trace-list">
         <div class="trace">Speed Traces</div>
         <div class="trace">Brake Traces</div>
@@ -556,15 +617,30 @@ html_content = '''<!DOCTYPE html>
   <section>
     <h2>Strategy Optimization AI</h2>
     <div class="decision-box">
-      <p class="decision-prompt">
-        <strong>Current State:</strong> Lap 32 · Tire Age: 18 laps · Weather: Light Rain incoming · SC Probability: 15%
-      </p>
+      <div class="lap-stats">
+        <div class="lap-stat">
+          <div class="val">32</div>
+          <div class="lbl">Current Lap</div>
+        </div>
+        <div class="lap-stat">
+          <div class="val">18</div>
+          <div class="lbl">Tire Age (laps)</div>
+        </div>
+        <div class="lap-stat">
+          <div class="val">15%</div>
+          <div class="lbl">SC Probability</div>
+        </div>
+        <div class="lap-stat">
+          <div class="val" style="color: var(--blue);">Rain</div>
+          <div class="lbl">Incoming Weather</div>
+        </div>
+      </div>
       <div class="decision-options">
         <div class="decision-btn btn-box">BOX NOW — Inters</div>
         <div class="decision-btn btn-stay">STAY OUT 7 LAPS</div>
       </div>
       <p class="explanation">
-        "Rain probability crosses 60% in 4 laps. Current tire delta vs. pit loss favors staying. <br>
+        "Rain probability crosses 60% in 4 laps. Current tire delta vs. pit loss favors staying out.
         However, queue position risk and undercut threat from P3 suggest boxing this lap."
       </p>
     </div>
@@ -579,7 +655,7 @@ html_content = '''<!DOCTYPE html>
       </div>
       <div class="physics-item">
         <div class="icon" style="background: rgba(0,168,255,0.15); color: var(--blue);">⛽</div>
-        Fuel Burn & Mass Model
+        Fuel Burn &amp; Mass Model
       </div>
       <div class="physics-item">
         <div class="icon" style="background: rgba(0,210,106,0.15); color: var(--green);">🌬️</div>
@@ -591,7 +667,7 @@ html_content = '''<!DOCTYPE html>
       </div>
       <div class="physics-item">
         <div class="icon" style="background: rgba(168,85,247,0.15); color: var(--purple);">🗺️</div>
-        Track Surface & Grip Map
+        Track Surface &amp; Grip Map
       </div>
       <div class="physics-item">
         <div class="icon" style="background: rgba(225,6,0,0.15); color: var(--accent);">🌡️</div>
@@ -621,14 +697,9 @@ html_content = '''<!DOCTYPE html>
 </main>
 
 <footer>
-  <p>Built by <a href="https://linkedin.com/in/adeebali521" target="_blank">Adeeb Ali</a> · Electronics Engineer · FPGA & Edge AI · Motorsport Enthusiast</p>
+  <p>Built by <a href="https://linkedin.com/in/adeebali521" target="_blank" rel="noopener noreferrer">Adeeb Ali</a> · Electronics Engineer · FPGA &amp; Edge AI · Motorsport Enthusiast</p>
   <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.6;">Not a toy. A system built with engineering rigor.</p>
 </footer>
 
 </body>
-</html>'''
-
-with open('/mnt/agents/output/f1_digital_twin.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("Saved successfully!")
+</html>
